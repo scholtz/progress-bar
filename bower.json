@@ -1,0 +1,23 @@
+{
+  "name": "step-progress-bar",
+  "description": "Progress bar with steps.",
+  "main": [
+    "dist/js/progress-bar.js",
+    "dist/css/main.css",
+  ],
+  "keywords": [
+    "progress bar",
+    "step progress bar",
+    "progress bar with text",
+    "bootstrap progress bar with text"
+  ],
+  "authors": [
+    "Ludovit Scholtz <ludko2@gmail.com>",
+	"tarunsingh"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "examples"
+  ],
+  "private": false
+}
