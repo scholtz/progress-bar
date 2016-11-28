@@ -3,7 +3,7 @@
   "description": "Progress bar with steps.",
   "main": [
     "dist/js/progress-bar.js",
-    "dist/css/main.css",
+    "dist/css/main.css"
   ],
   "keywords": [
     "progress bar",
