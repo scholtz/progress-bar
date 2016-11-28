@@ -18,8 +18,8 @@
     };
 
     var createStatusBar = function(stages, stageWidth, currentStageIndex) {
-      var statusBar = createElement('div', 'status-bar', {width: 100 - stageWidth + '%'}, '');
-      var currentStatus = createElement('div', 'current-status', {}, '');
+      var statusBar = createElement('div', 'pb-status-bar', {width: 100 - stageWidth + '%'}, '');
+      var currentStatus = createElement('div', 'pb-current-status', {}, '');
 
       setTimeout(function() {
         currentStatus.style.width = (100 * currentStageIndex)/(stages.length - 1)+'%';
@@ -31,13 +31,13 @@
     };
 
     var createCheckPoints = function(stages, stageWidth, currentStageIndex) {
-      var ul = createElement('ul', 'progress-bar', { }, '');
+      var ul = createElement('ul', 'pb-progress-bar', { }, '');
       var animationDelay = renderingWaitDelay;
       for (var index = 0; index < stages.length; index++) {
-        var li = createElement('li', 'section', {width: stageWidth + '%'}, stages[index]);
+        var li = createElement('li', 'pb-section', {width: stageWidth + '%'}, stages[index]);
         if(currentStageIndex >= index) {
           setTimeout(function(li, currentStageIndex, index) {
-            li.className+= (currentStageIndex > index)?' visited': ' visited current';
+            li.className+= (currentStageIndex > index)?' pb-visited': ' pb-visited pb-current';
           }, animationDelay, li, currentStageIndex, index);
           animationDelay+= ProgressBar.singleStepAnimation;
         }
@@ -84,7 +84,7 @@
         if(wrapper.length > 0) {
           wrapper = wrapper[0];
         } else {
-          wrapper = createElement('div', 'progressbar-wrapper', { }, '');
+          wrapper = createElement('div', 'pb-progressbar-wrapper', { }, '');
           document.body.appendChild(wrapper);
         }
         createHTML(wrapper, stages, currentStage);

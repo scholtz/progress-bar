@@ -1,18 +1,14 @@
-body {
-    min-width: 320px;
-    max-width: 1024px;
-    margin: 8px auto;
-}
 
-ul.progress-bar {
+ul.pb {
     width: 100%;
     margin: 0;
     padding: 0;
     font-size: 0;
     list-style: none;
+
 }
 
-li.section {
+li.pb-section {
     display: inline-block;
     padding-top: 45px;
     font-size: 13px;
@@ -26,7 +22,7 @@ li.section {
     text-overflow: ellipsis;
 }
 
-li.section:before {
+li.pb-section:before {
     content: 'x';
     position: absolute;
     top: 2px;
@@ -40,31 +36,31 @@ li.section:before {
     line-height: 30px;
     background: gray;
 }
-.status-bar {
+.pb-status-bar {
     height: 2px;
     background: gray;
     position: relative;
     top: 20px;
     margin: 0 auto;
 }
-.current-status {
+.pb-current-status {
     height: 2px;
     width: 0;
     border-radius: 1px;
     background: mediumseagreen;
 }
 
-@keyframes changeBackground {
+li.pb-section.pb-visited:before {
+    content: '\2714';
+    animation: pb-changeBackground .5s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes pb-changeBackground {
     from {background: gray}
     to {background: mediumseagreen}
 }
 
-li.section.visited:before {
-    content: '\2714';
-    animation: changeBackground .5s linear;
-    animation-fill-mode: forwards;
-}
-
-li.section.visited.current:before {
+li.pb-section.pb-visited.pb-current:before {
     box-shadow: 0 0 0 2px mediumseagreen;
 }
